@@ -1,0 +1,18 @@
+version: "3.8"
+services:
+  caption-genie-db:
+    image: postgres
+    container_name: caption-genie-db
+    environment:
+      - POSTGRES_USER=admin
+      - POSTGRES_PASSWORD=admin
+      - POSTGRES_DB=caption-genie
+    ports:
+      - 5432:5432
+
+  caption-genie-be:
+    build: "."
+    container_name: caption-genie-be
+    ports:
+      - 8000:8000
+  
